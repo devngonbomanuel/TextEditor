@@ -1,57 +1,68 @@
 ﻿using System;
-using src.TextEditorMenu;
 
-
-
-namespace src.TextEditorOperacoes
+namespace src
 {
-    public static class TextEditorOperacoes
+    public  class TextEditorOperacoes
     {
         //--Content: Método para abrir arquivo--
-        static void Abrir()
+       public  static void Abrir()
         {
             Console.Clear();
             Console.WriteLine("Caminho do arquivo para abrir: ");
             var caminho = Console.ReadLine();
 
+            if(File.Exists(caminho) && !string.IsNullOrEmpty(caminho))
             using (var arquivo = new StreamReader(caminho))
             {
                 string texto = arquivo.ReadToEnd();
-                Console.WriteLine($"{texto}");
+                Console.WriteLine("-------------------------Conteúdo do arquivo-------------------------");
+                Console.WriteLine(texto);
+                Console.WriteLine("---------------------------------------------------------------------");
             }
+            else
+            {
+                Console.WriteLine("\nArquivo não encontrado!\nVerifique se o caminho está correto.");
+            }
+
         }
 
-
         //--Content: Método para criar arquivo--
-        static void Criar()
+        public static void Criar()
         {
             Console.Clear();
-            Console.WriteLine("Digite o texto: "
-                + "(clique na tecla ESC para fechar)");
+            Console.WriteLine("Digite o texto abaixo da linha: (ou aperte a tecla ESC para fechar)");
+            Console.WriteLine("---------------------------------------------------------------------");
             string texto = "";
             do
             {
                 texto += Console.ReadLine();
-                texto = Environment.NewLine;
+                texto += Environment.NewLine;
             }
-            while (Console.ReadKey().Key != ConsoleKey.Escape); ;
+            while (Console.ReadKey(true).Key != ConsoleKey.Escape);
 
             Salvar(texto);
         }
 
         //--Content: Método para salvar arquivo--
-        static void Salvar(string texto)
+        public static void Salvar(string texto)
         {
             Console.Clear();
             Console.WriteLine("Salvar arquivo em: ");
             var caminho = Console.ReadLine();
 
-            using (var arquivo = new StreamWriter(caminho))
+            if (!string.IsNullOrEmpty(caminho))
             {
-                arquivo.Write(texto);
-            }
+                using (var arquivo = new StreamWriter(caminho))
+                {
+                    arquivo.Write(texto);
+                }
 
-            Console.WriteLine($"Arquivo {caminho} salvo com sucesso!");
+                Console.WriteLine($"Arquivo {caminho} salvo com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("O caminho não pode ser vazio!");
+            }
         }
     }
 }

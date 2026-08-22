@@ -1,3 +1,3 @@
-﻿using src.TextEditorMenu;
-using src.TextEditorOperacoes;
+﻿using src;
 
+TextEditorMenu.Iniciar();

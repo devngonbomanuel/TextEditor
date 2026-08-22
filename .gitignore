@@ -1,8 +1,8 @@
 # --Content: Executáveis e arquivos de build/saída--
-[Bb]bin/
-[Oo]obj/
-[Ll]log/
-[Ll]logs/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 build/
 out/
 

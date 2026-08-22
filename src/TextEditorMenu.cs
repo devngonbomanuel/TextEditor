@@ -1,26 +1,25 @@
 ﻿using System;
-using src.TextEditorOperacoes;
 
-namespace src.TextEditorMenu
+namespace src
 {
-    public static class TextEditorMenu
+    public class TextEditorMenu
     {
-        static void Menu()
+        public static void Iniciar()
         {
-            Console.WriteLine("****Bem-vindo ao Editor de Texto****");
+            Console.Clear();
+            Console.WriteLine("\t\t\t\t****Bem-vindo ao Editor de Texto****");
             Console.WriteLine("1- Abrir arquivo");
             Console.WriteLine("2- Criar arquivo");
             Console.WriteLine("0- Sair");
+            Console.Write("Opção: ");
 
            int opcao = Convert.ToInt32(Console.ReadLine());
             switch (opcao)
             {
                 case 0: System.Environment.Exit(0); break;
-                case 1: Abrir(); break;
-                case 2: Criar(); break;
-                default: Console.WriteLine("Escolha uma das opções válidas!"); 
-                Menu();
-                    break;
+                case 1: TextEditorOperacoes.Abrir(); break;
+                case 2: TextEditorOperacoes.Criar(); break;
+                default: Iniciar(); break;
             }
         }
     }
