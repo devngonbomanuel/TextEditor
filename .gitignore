@@ -1,0 +1,15 @@
+# --Content: Executáveis e arquivos de build/saída--
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+build/
+out/
+
+# --Content: Arquivos de usuário/configurações do IDE--
+.vs/
+.idea/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
