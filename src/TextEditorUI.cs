@@ -1,10 +1,12 @@
 ﻿using System;
+using src.texteditoroperations;
 
 namespace src.texteditormenu
 {
     public static class TextEditorUI
     {
-        static void Menu(){
+        static void Menu()
+        {
             Console.WriteLine("****Bem-vindo ao Editor de Texto****");
             Console.WriteLine("1- Abrir arquivo");
             Console.WriteLine("2- Criar arquivo");
