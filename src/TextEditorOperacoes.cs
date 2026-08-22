@@ -1,10 +1,11 @@
 ﻿using System;
+using src.TextEditorMenu;
 
 
 
-namespace src.texteditoroperations
+namespace src.TextEditorOperacoes
 {
-    public static class TextEditorOperations
+    public static class TextEditorOperacoes
     {
         //--Content: Método para abrir arquivo--
         static void Abrir()
@@ -15,7 +16,8 @@ namespace src.texteditoroperations
 
             using (var arquivo = new StreamReader(caminho))
             {
-                string texto = File.ReadToEnd();
+                string texto = arquivo.ReadToEnd();
+                Console.WriteLine($"{texto}");
             }
         }
 
@@ -25,7 +27,7 @@ namespace src.texteditoroperations
         {
             Console.Clear();
             Console.WriteLine("Digite o texto: "
-                + "(clique em na tecla ESC para fechar)");
+                + "(clique na tecla ESC para fechar)");
             string texto = "";
             do
             {
@@ -46,8 +48,12 @@ namespace src.texteditoroperations
 
             using (var arquivo = new StreamWriter(caminho))
             {
-                arquivo.Write(texto);            
+                arquivo.Write(texto);
             }
+
+            Console.WriteLine($"Arquivo {caminho} salvo com sucesso!");
         }
     }
 }
+   
+

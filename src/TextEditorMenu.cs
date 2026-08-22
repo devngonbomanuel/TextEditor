@@ -1,9 +1,9 @@
 ﻿using System;
-using src.texteditoroperations;
+using src.TextEditorOperacoes;
 
-namespace src.texteditormenu
+namespace src.TextEditorMenu
 {
-    public static class TextEditorUI
+    public static class TextEditorMenu
     {
         static void Menu()
         {
