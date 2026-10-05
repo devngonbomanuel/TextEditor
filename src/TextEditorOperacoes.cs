@@ -5,6 +5,8 @@ namespace src
     public  class TextEditorOperacoes
     {
         //--Content: Método para abrir arquivo--
+        //TODO 1: Usar try-catch
+        //TODO 2: Atualizar caminho para a pasta src/arquivos/
        public  static void Abrir()
         {
             Console.Clear();
